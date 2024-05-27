@@ -3,10 +3,10 @@ name: GitHub Actions Build and Deploy
 
 on:
   # 手动运行工作流程（workflow_dispatch 事件触发器配置后可以在actions下手动运行工作流）
-  # workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   build-and-deploy:
@@ -45,6 +45,7 @@ jobs:
         with:
           github_token: ${{ secrets.PAGES_TOKEN }}
           publish_dir: ./dist
+          #publish_branch: deploy-pages  # default: gh-pages
           # 指定仓库：你要发布的仓库路径名
           # repository-name: msyuan/vue3-mbti
           # 部署到 deploy-pages 分支，也就是部署后提交到那个分支, 不填写会自定创建分支gh-pages
