@@ -3,7 +3,10 @@ name: GitHub Actions Build and Deploy
 
 on:
   # 手动运行工作流程（workflow_dispatch 事件触发器配置后可以在actions下手动运行工作流）
-  workflow_dispatch:
+  # workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
@@ -37,7 +40,7 @@ jobs:
       # 部署到GitHub Pages - 也就是将打包内容发布到GitHub Pages
       - name: Deploy
         # 使用别人写好的 actions去部署（将打包文件部署到指定分支上）
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: peaceiris/actions-gh-pages@v3
         # 自定义环境变量
         with:
           # 指定仓库：你要发布的仓库路径名
