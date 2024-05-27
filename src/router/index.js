@@ -5,13 +5,11 @@
  */
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/home.vue";
-// const Result = () => import("../views/result.vue");
-// const Text = () => import("../views/text.vue");
-import Result from "../views/result.vue";
-import Text from "../views/text.vue";
+const Result = () => import("../views/result.vue");
+const Text = () => import("../views/text.vue");
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.VITE_BASE_PATH),
   // history: createWebHashHistory(),
   routes: [
     {
