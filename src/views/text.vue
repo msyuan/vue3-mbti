@@ -7,7 +7,7 @@
   <div class="ui-box">
     <div class="title">
       <router-link class="back" :to="{name: 'home'}">返回首页</router-link>
-      MBTI的16种个性类型介绍
+      MBTI的16种性格简介
     </div>
     <ul class="list">
       <li class="item" v-for="(obj, index) in result" :key="obj.value">
@@ -40,7 +40,7 @@
 }
 .back {
   position: absolute;
-  left: 20px;
+  left: 5px;
   top: 10px;
   color: cornflowerblue;
   font-size: 14px;
